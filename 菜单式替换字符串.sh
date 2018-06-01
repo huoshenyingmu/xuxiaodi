@@ -58,7 +58,7 @@ EOF
 EOF
 	read -p "请输入原字符串:" Ostring
 	read -p "请输入替换字符串:" Cstring
-	read -p "请输入路径或者文件" Pathfile
+	read -p "请输入路径或者文件:" Pathfile
 	sed -i "s/$Ostring/$Cstring/g" `grep $Ostring -rl $Pathfile`
 	;;
 
