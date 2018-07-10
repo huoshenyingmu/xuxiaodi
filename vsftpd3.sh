@@ -95,11 +95,11 @@ if [ ! -d "$local_root" ]; then
 fi
 ##判断iptables中是否存在此内容
 if [ `grep -c "2101" /etc/sysconfig/iptables` -eq '0' ]; then
-        iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 2101 -j ACCEPT
+        sed -i '/-i lo/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 2101 -j ACCEPT' /etc/sysconfig/iptables
 fi
 
 if [ `grep -c "6000" /etc/sysconfig/iptables` -eq '0' ]; then
-        iptables -A INPUT -p tcp -m tcp --dport 6000:6100 -j ACCEPT
+       sed -i '/-i lo/a -A INPUT -m state --state NEW -m tcp -p tcp --dport 6000:6100 -j ACCEPT' /etc/sysconfig/iptables
 fi
 /etc/init.d/iptables save
 service iptables restart
