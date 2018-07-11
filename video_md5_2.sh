@@ -62,7 +62,7 @@ arr=($line1)
 DIR=${arr[1]}
 name=${arr[0]}
 #输出到index.html
-echo '<vodfile Name="'$name'"><![CDATA['$DIR']]></vodfile>' >> >> $DATA_DIR/$time_DIR/back_vod/index.html
+echo '<vodfile Name="'$name'"><![CDATA['$DIR']]></vodfile>' >> >> $DATA_DIR/$time_DIR/back_vod/index.xml
 done < /tmp/DIR_File
 
 #添加crontab计划任务
