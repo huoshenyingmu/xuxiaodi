@@ -16,7 +16,7 @@ find $VOD_DIR -type f -print0 |  xargs -0 md5sum > /tmp/system_45.md5
 #休眠5分钟再次获取视频的md5值，时间可以自定义：【sleep 1s 睡眠1秒；sleep 1m 睡眠1分；sleep 1h 睡眠1小时】
 sleep 5m
 #5分钟后获取的md5值
-find $VOD_DIR -type f -print0 |  xargs -0 md5sum > /tmp/system_46.md5llsh
+find $VOD_DIR -type f -print0 |  xargs -0 md5sum > /tmp/system_46.md5
 #新建5分钟后，没有变化视频的存放目录
 mkdir -p $DATA_DIR/$time_DIR
 #进行比较，并列出md5值不变的文件,
@@ -36,7 +36,7 @@ done
 #done
 #find $DATA_DIR/$time_DIR -type f -print0 |  xargs -0 md5sum | awk '{print $2}'
 #获取新建目录下的md5值
-find $DATA_DIR/$time_DIR -type f -print0 |  xargs -0 md5sum > /tmp/system_47.md5llsh
+find $DATA_DIR/$time_DIR -type f -print0 |  xargs -0 md5sum > /tmp/system_47.md5
 #创建存放软连接的目录
 mkdir -p $DATA_DIR/$time_DIR/back_vod/
 #重命名方式是以md5值为名字
